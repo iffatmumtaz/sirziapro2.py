@@ -4,7 +4,7 @@ st.title("🌍Unit Converter App")
 
 st.markdown("### Convert Length Weight And Time Instantly")
 st.write("Wellcome! Select a category, enter a value and get the converter result in real-time")
-category = st.selectbox("Choose a category " ["Length","Weight","Time"])
+category = st.selectbox("Choose a category " ["Length" , "Weight" , "Time"])
 
 def convert_units(category, value ,unit):
     if category == "Length":
