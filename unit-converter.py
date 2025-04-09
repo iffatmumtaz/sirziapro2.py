@@ -51,7 +51,12 @@ def convert_units(category, value, unit):
         elif unit == "Days to hours":
             return value * 24
 
-    return None  # fallback
-
-from_unit, to_unit = unit.split(" to ")
-st.success(f"✅ Successfully Converted!\n\n**{value:.2f} {from_unit}** is equal to **{result:.2f} {to_unit}**")
+    return None  # fallbackif value > 0:
+    result = convert_units(category, value, unit)
+    if result is not None:
+        from_unit, to_unit = unit.split(" to ")
+        st.success(f"✅ Successfully Converted!\n\n**{value:.2f} {from_unit}** is equal to **{result:.2f} {to_unit}**")
+    else:
+        st.error("❌ Invalid conversion. Please check your input.")
+else:
+    st.info("ℹ️ Please enter a value greater than 0 to perform conversion.")
