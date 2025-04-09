@@ -53,12 +53,5 @@ def convert_units(category, value, unit):
 
     return None  # fallback
 
-# Show result
-if value > 0:
-    result = convert_units(category, value, unit)
-    if result is not None:
-        st.success(f"✅ The result is: **{result:.2f}**")
-    else:
-        st.error("❌ Invalid conversion. Please check your input.")
-else:
-    st.info("ℹ️ Please enter a value greater than 0 to perform conversion.")
+from_unit, to_unit = unit.split(" to ")
+st.success(f"✅ Successfully Converted!\n\n**{value:.2f} {from_unit}** is equal to **{result:.2f} {to_unit}**")
